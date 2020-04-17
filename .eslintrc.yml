@@ -1,0 +1,23 @@
+parser: babel-eslint
+extends: airbnb
+env:
+  browser: true
+rules:
+  no-console: "off"
+  comma-dangle: "off"
+  react/jsx-filename-extension: "off"
+  import/prefer-default-export: "off"
+  no-plusplus: "off"
+  new-cap: "off"
+  no-restricted-globals: "off"
+  no-use-before-define: "off"
+  no-multi-assign: "off"
+  class-methods-use-this: "off"
+  no-param-reassign: "off"
+  no-case-declarations: "off"
+  react/sort-comp: "off"
+  max-len: [2, 120, 4, { "ignoreUrls": true }]
+  no-await-in-loop: "off"
+  jsx-a11y/anchor-has-content: "off"
+  jsx-a11y/anchor-is-valid: "off"
+  react/no-unescaped-entities: "off"

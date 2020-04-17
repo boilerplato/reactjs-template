@@ -1,0 +1,52 @@
+version: 1.0.0
+template:
+  engine: handlebars
+  path: "."
+  extension: ".boiler"
+data:
+  - name: appDescription
+    type: string
+    message: "Enter app description:"
+    required: false
+    defaultValue: Hello $APP_NAME
+  - name: appVersion
+    type: semver
+    message: "Enter initial version:"
+    required: false
+    defaultValue: "1.0.0"
+  - name: author
+    type: string
+    message: "Enter author e.g. John Doe <john@gmail.com> (https://john.com/):"
+    required: false
+    defaultValue: ""
+  - name: license
+    type: string
+    message: "Enter app license:"
+    required: false
+    defaultValue: ISC
+  - name: homepage
+    type: string
+    message: "App homepage?"
+    required: false
+    defaultValue: ""
+  - name: isAntdIncluded
+    type: bool
+    message: "Do you want the Ant Design to be included?"
+    required: false
+    defaultValue: false
+  - name: isWorkerIncluded
+    type: bool
+    message: "Do you want the webpack worker-loader to be included?"
+    required: false
+    defaultValue: false
+postGenerate: npm install
+helpText:
+  - "Inside that directory, you can run several commands:\n"
+  - '  {{ color "npm start" "cyan" }}'
+  - "    Starts the development server.\n"
+  - '  {{ color "npm run build" "cyan" }}'
+  - "    Bundles the app into static files for production.\n"
+  - "We suggest that you begin by typing:\n"
+  - '  {{ color "cd" "cyan" }} $APP_REL_PATH'
+  - '  {{ color "npm start" "cyan" }}'
+  - "\n"

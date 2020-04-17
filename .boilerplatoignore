@@ -1,0 +1,12 @@
+# Ignore these files as these will be generated from their .boiler files
+package.json
+webpack.config.prod.js
+webpack.config.dev.js
+README.md
+.babelrc
+/public/index.html
+/public/manifest.json
+
+# Others
+/node_modules
+LICENSE
