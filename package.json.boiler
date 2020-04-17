@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config webpack.config.dev.js --hot",
     "build": "webpack --config webpack.config.prod.js"
   },{{#if author}}
-  "author": "{{ author }}",
+  "author": "{{{ author }}}",
   {{/if}}
   "license": "{{ license }}",{{#if homepage}}
   "homepage": "{{ homepage }}",
