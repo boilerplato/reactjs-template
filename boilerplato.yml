@@ -49,4 +49,3 @@ helpText:
   - "We suggest that you begin by typing:\n"
   - '  {{ color "cd" "cyan" }} $APP_REL_PATH'
   - '  {{ color "npm start" "cyan" }}'
-  - "\n"
