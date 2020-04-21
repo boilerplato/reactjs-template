@@ -1,0 +1,52 @@
+import React, { Component } from 'react';{{#if isRouterIncluded}}
+import { withRouter } from 'react-router-dom';{{/if}}{{#if isReduxIncluded}}
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';{{/if}}
+import './index.css';{{#if isReduxIncluded}}
+import * as fooActions from '../../store/foo/actions';{{/if}}
+
+class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    };
+  }
+
+  render() {
+    return (
+      <div className="home">
+        Home page
+        <p>
+          Lorem Ipsum
+        </p>
+      </div>
+    );
+  }
+}
+
+{{#if isReduxIncluded}}
+const mapStateToProps = (state) => ({
+  foo: state.foo,
+  bar: state.bar,
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  ...fooActions
+}, dispatch);
+
+const enhance = connect(mapStateToProps, mapDispatchToProps);{{/if}}
+
+{{#if (and isReduxIncluded isRouterIncluded)}}
+export default withRouter(enhance(Home));
+{{else}}
+{{#if (and isReduxIncluded (not isRouterIncluded))}}
+export default enhance(Home);
+{{else}}
+{{#if (and (not isReduxIncluded) isRouterIncluded)}}
+export default withRouter(Home);
+{{else}}
+export default Home;
+{{/if}}
+{{/if}}
+{{/if}}

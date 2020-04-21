@@ -6,6 +6,11 @@ README.md
 .babelrc
 /public/index.html
 /public/manifest.json
+/src/index.js
+/src/history.js
+/src/store
+.gitignore
+/src/pages/Home/index.js
 
 # Others
 /node_modules

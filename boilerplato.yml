@@ -29,6 +29,16 @@ data:
     message: "App homepage?"
     required: false
     defaultValue: ""
+  - name: isRouterIncluded
+    type: bool
+    message: "Will you be using React Router?"
+    required: false
+    defaultValue: true
+  - name: isReduxIncluded
+    type: bool
+    message: "Will you be using React Redux?"
+    required: false
+    defaultValue: false
   - name: isAntdIncluded
     type: bool
     message: "Do you want the Ant Design to be included?"
@@ -39,7 +49,11 @@ data:
     message: "Do you want the webpack worker-loader to be included?"
     required: false
     defaultValue: false
-postGenerate: npm install
+postGenerate:
+  - npm install fs-extra --no-save
+  - node scripts/move-files.js
+  - rm -rf scripts
+  # - npm install
 helpText:
   - "Inside that directory, you can run several commands:\n"
   - '  {{ color "npm start" "cyan" }}'

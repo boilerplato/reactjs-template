@@ -1,0 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom';{{#if isReduxIncluded}}
+import { Provider } from 'react-redux';{{/if}}
+import './index.css';
+import App from './components/App';{{#if isReduxIncluded}}
+import configureStore from './store';{{/if}}
+
+{{#if isReduxIncluded}}ReactDOM.render(
+  <Provider store={configureStore()}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);{{else}}ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);{{/if}}

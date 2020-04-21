@@ -7,11 +7,9 @@
     "start": "webpack-dev-server --config webpack.config.dev.js --hot",
     "build": "webpack --config webpack.config.prod.js"
   },{{#if author}}
-  "author": "{{{ author }}}",
-  {{/if}}
+  "author": "{{{ author }}}",{{/if}}
   "license": "{{ license }}",{{#if homepage}}
-  "homepage": "{{ homepage }}",
-  {{/if}}
+  "homepage": "{{ homepage }}",{{/if}}
   "browserslist": {
     "production": [
       ">0.2%",
@@ -25,17 +23,16 @@
     ]
   },
   "dependencies": { {{#if isAntdIncluded}}
-    "antd": "^3.26.15",
-    {{/if}}
+    "antd": "^3.26.15",{{/if}}
     "babel-polyfill": "^6.26.0",
-    "history": "^4.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.13.1"{{#if isReduxIncluded}},
     "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0"{{/if}}{{#if isRouterIncluded}},
+    "react-router-dom": "^5.1.2",
+    "history": "^4.10.1"{{/if}}
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -63,10 +60,8 @@
     "style-loader": "^1.1.4",
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",{{#if isWorkerIncluded}}
-    "webpack-dev-server": "^3.10.3",
-    "worker-loader": "^2.0.0"{{else}}
-    "webpack-dev-server": "^3.10.3"
-    {{/if}}
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"{{#if isWorkerIncluded}},
+    "worker-loader": "^2.0.0"{{/if}}
   }
 }

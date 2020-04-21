@@ -151,6 +151,5 @@ sketch
 ### Others ###
 package-lock.json
 yarn.lock
-/my-app
 
 # End of https://www.gitignore.io/api/node,react,macos
